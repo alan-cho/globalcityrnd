@@ -1,0 +1,22 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<div class="archive">
+  <h2>All Posts</h2>
+
+  {% if site.posts.size > 0 %}
+  <ul class="archive-list">
+    {% for post in site.posts %}
+    <li>
+      <span class="archive-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No posts yet.</p>
+  {% endif %}
+</div>
